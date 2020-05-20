@@ -59,7 +59,7 @@
        host all all 192.168.0.0/24 trust
      '';
      initialScript = pkgs.writeText "backend-initScript" ''
-       CREATE ROLE jan WITH LOGIN PASSWORD 'ooKTFMuI' SUPERUSER;
+       CREATE ROLE jan WITH LOGIN PASSWORD 'your-secret-password' SUPERUSER;
      '';
   };
 
