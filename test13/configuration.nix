@@ -89,7 +89,15 @@
           # required when the target is also TLS server with multiple hosts
           "proxy_ssl_server_name on;" +
           # required when the server wants to use HTTP Authentication
-          "proxy_pass_header Authorization;"
+          "proxy_pass_header Authorization;" +
+          "proxy_set_header Host $host;" +
+          "proxy_set_header Front-End-Https On;" +            
+          "proxy_set_header X-Forwarded-Host $http_host;" +
+          "proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;" +
+          "proxy_set_header X-Forwarded-Proto https;" +
+          "proxy_set_header X-Real-IP $remote_addr;"
+
+            
           ;
       };
       
